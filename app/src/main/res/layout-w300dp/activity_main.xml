@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:background="@color/bg"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <TextView
+            android:id="@+id/history"
+            style="@style/Notes"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingBottom="30dp"
+            android:textSize="25sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/all"/>
+
+    <TextView
+            android:id="@+id/all"
+            style="@style/Notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintHeight_max="180dp"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@id/digit"/>
+
+    <TextView
+            android:id="@+id/digit"
+            style="@style/Notes"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColorHint="@color/defaultNumberText"
+            android:textSize="40sp"
+            android:hint="@string/zero"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6"/>
+
+    <!--    C ^2 % /    -->
+
+    <Button
+            android:id="@+id/clearDigit"
+            style="@style/OperationKey"
+            android:text="@string/clearDigit"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/backspace"
+            app:layout_constraintTop_toBottomOf="@id/guideline"
+            app:layout_constraintBottom_toTopOf="@id/one"/>
+
+    <Button
+            android:id="@+id/clearEverything"
+            style="@style/OperationKey"
+            android:text="@string/clearEverything"
+            app:layout_constraintStart_toStartOf="@+id/backspace"
+            app:layout_constraintEnd_toEndOf="@+id/backspace"
+            app:layout_constraintTop_toBottomOf="@id/guideline"
+            app:layout_constraintBottom_toTopOf="@id/one"/>
+
+    <Button
+            android:id="@+id/power"
+            style="@style/OperationKey"
+            android:text="@string/power"
+            app:layout_constraintStart_toStartOf="@+id/zero"
+            app:layout_constraintEnd_toEndOf="@+id/zero"
+            app:layout_constraintTop_toBottomOf="@id/guideline"
+            app:layout_constraintBottom_toTopOf="@id/one"/>
+
+    <Button
+            android:id="@+id/percent"
+            style="@style/OperationKey"
+            android:text="@string/percent"
+            app:layout_constraintStart_toStartOf="@+id/dot"
+            app:layout_constraintEnd_toEndOf="@+id/dot"
+            app:layout_constraintTop_toBottomOf="@id/guideline"
+            app:layout_constraintBottom_toTopOf="@id/one"/>
+
+    <Button
+            android:id="@+id/divide"
+            style="@style/OperationKey"
+            android:text="@string/divide"
+            app:layout_constraintStart_toStartOf="@+id/calculate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline"
+            app:layout_constraintBottom_toTopOf="@id/one"/>
+
+
+    <!--    1 2 3 *    -->
+
+    <Button
+            android:id="@+id/one"
+            style="@style/DefaultNumbers"
+            android:text="@string/one"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/backspace"
+            app:layout_constraintTop_toBottomOf="@id/percent"
+            app:layout_constraintBottom_toTopOf="@id/four"/>
+
+    <Button
+            android:id="@+id/two"
+            style="@style/DefaultNumbers"
+            android:text="@string/two"
+            app:layout_constraintStart_toStartOf="@+id/zero"
+            app:layout_constraintEnd_toEndOf="@+id/zero"
+            app:layout_constraintTop_toBottomOf="@id/percent"
+            app:layout_constraintBottom_toTopOf="@id/four"/>
+
+    <Button
+            android:id="@+id/three"
+            style="@style/DefaultNumbers"
+            android:text="@string/three"
+            app:layout_constraintStart_toStartOf="@+id/dot"
+            app:layout_constraintEnd_toEndOf="@+id/dot"
+            app:layout_constraintTop_toBottomOf="@id/percent"
+            app:layout_constraintBottom_toTopOf="@id/four"/>
+
+    <Button
+            android:id="@+id/multiply"
+            style="@style/OperationKey"
+            android:text="@string/multiply"
+            app:layout_constraintStart_toStartOf="@+id/calculate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/percent"
+            app:layout_constraintBottom_toTopOf="@id/four"/>
+
+
+    <!--    4 5 6 -    -->
+
+    <Button
+            android:id="@+id/four"
+            style="@style/DefaultNumbers"
+            android:text="@string/four"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/backspace"
+            app:layout_constraintTop_toBottomOf="@id/one"
+            app:layout_constraintBottom_toTopOf="@id/seven"/>
+
+    <Button
+            android:id="@+id/five"
+            style="@style/DefaultNumbers"
+            android:text="@string/five"
+            app:layout_constraintStart_toStartOf="@+id/zero"
+            app:layout_constraintEnd_toEndOf="@+id/zero"
+            app:layout_constraintTop_toBottomOf="@id/one"
+            app:layout_constraintBottom_toTopOf="@id/seven"/>
+
+    <Button
+            android:id="@+id/six"
+            style="@style/DefaultNumbers"
+            android:text="@string/six"
+            app:layout_constraintStart_toStartOf="@+id/dot"
+            app:layout_constraintEnd_toEndOf="@+id/dot"
+            app:layout_constraintTop_toBottomOf="@id/one"
+            app:layout_constraintBottom_toTopOf="@id/seven"/>
+
+    <Button
+            android:id="@+id/minus"
+            style="@style/OperationKey"
+            android:text="@string/minus"
+            app:layout_constraintStart_toStartOf="@+id/calculate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/one"
+            app:layout_constraintBottom_toTopOf="@id/seven"/>
+
+
+    <!--    7 8 9 +    -->
+
+    <Button
+            android:id="@+id/seven"
+            style="@style/DefaultNumbers"
+            android:text="@string/seven"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/backspace"
+            app:layout_constraintTop_toBottomOf="@id/four"
+            app:layout_constraintBottom_toTopOf="@id/backspace"/>
+
+    <Button
+            android:id="@+id/eight"
+            style="@style/DefaultNumbers"
+            android:text="@string/eight"
+            app:layout_constraintStart_toStartOf="@+id/zero"
+            app:layout_constraintEnd_toEndOf="@+id/zero"
+            app:layout_constraintTop_toBottomOf="@id/four"
+            app:layout_constraintBottom_toTopOf="@id/backspace"/>
+
+    <Button
+            android:id="@+id/nine"
+            style="@style/DefaultNumbers"
+            android:text="@string/nine"
+            app:layout_constraintStart_toStartOf="@+id/dot"
+            app:layout_constraintEnd_toEndOf="@+id/dot"
+            app:layout_constraintTop_toBottomOf="@id/four"
+            app:layout_constraintBottom_toTopOf="@id/backspace"/>
+
+    <Button
+            android:id="@+id/plus"
+            style="@style/OperationKey"
+            android:text="@string/plus"
+            app:layout_constraintStart_toStartOf="@+id/calculate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/four"
+            app:layout_constraintBottom_toTopOf="@id/backspace"/>
+
+
+    <!--    DEL 0 . =    -->
+
+    <Button
+            android:id="@+id/backspace"
+            style="@style/OperationKey"
+            android:text="@string/backspace"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/zero"
+            app:layout_constraintTop_toBottomOf="@id/seven"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+            android:id="@+id/zero"
+            style="@style/DefaultNumbers"
+            android:text="@string/zero"
+            app:layout_constraintStart_toEndOf="@+id/backspace"
+            app:layout_constraintEnd_toStartOf="@id/dot"
+            app:layout_constraintTop_toBottomOf="@id/seven"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+            android:id="@+id/dot"
+            style="@style/DefaultNumbers"
+            android:text="@string/dot"
+            app:layout_constraintStart_toEndOf="@+id/zero"
+            app:layout_constraintEnd_toStartOf="@id/calculate"
+            app:layout_constraintTop_toBottomOf="@id/seven"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+            android:id="@+id/calculate"
+            style="@style/OperationKey"
+            android:text="@string/calculate"
+            app:layout_constraintStart_toEndOf="@+id/dot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seven"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
